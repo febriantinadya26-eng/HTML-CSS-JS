@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBGIS TOD Development</title>
+
+    <style>
+        nav{
+            background-color: #82ffcd;
+            border-style: double;
+            border-color: #00b56c;
+            text-align: right;
+            position:static;
+            padding: 20px;
+        }
+        #Judul1{
+            text-align: center;
+            margin: 10px 20px 10px 20px;
+        }
+        #definisiX{
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: #039b5e;
+            color:white;
+            border-radius: 10px;
+        }
+        button{
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin:5%;
+        }
+        table, th, td {
+            border: 1px solid green}
+        tr:hover {background-color: coral;}
+        .list{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 2 kolom */
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+        .list li {
+            color: white;
+            background: #2dd668;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .map-contain {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            
+        }
+        img{
+            display: block;
+            margin: auto;
+            width: 100px;
+            border-radius: 50%;
+        }
+        .biodata{
+             text-align: center;  
+        }
+        .diriku{
+            border: 1px solid #000000;
+            color:rgb(0, 0, 0);
+            border-radius: 10px;
+            text-align: center;  
+        }
+        .timeline{
+            position: relative;
+            margin-left: 30px;
+            padding-left: 30px;
+        }
+
+        .timeline::before{
+            content:"";
+            position:absolute;
+            left:0;
+            top:0;
+            width:3px;
+            height:100%;
+            background:#4CAF50;
+        }
+
+        .timeline-item{
+            position:relative;
+            margin-bottom:40px;
+        }
+
+        .timeline-dot{
+            position:absolute;
+            left:-39px;
+            top:5px;
+
+            width:18px;
+            height:18px;
+
+            background:#4CAF50;
+            border-radius:50%;
+            border:4px solid white;
+        }
+
+        .timeline-content{
+            background:#f8f8f8;
+            padding:18px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,.1);
+        }
+
+        .timeline-content span{
+            color:#4CAF50;
+            font-weight:bold;
+        }
+
+        .timeline-content h3{
+            margin:8px 0;
+        }
+    </style>
+
+
+</head>
+<body>
+   <!-- NAVBAR -->
+   <div>
+    <nav>
+        <a href="#Home">Beranda</a> |
+        <a href="#Tentang">Tentang</a>
+    </nav>
+   </div>
+
+   <!-- Main Content -->
+   <main>
+    <!-- Beranda/Home -->
+    <section id="Home">
+
+        <h1 id="Judul1" >TRANSIT ACCESS MAP</h1>
+        <h2><em>Akses Transportasi dan Potensi TOD</em></h2>
+
+        <h2>Definisi</h2>
+        <p id="definisiX">
+            <strong>Akses Transportasi, Akses Kota yang lebih Baik</strong><br>
+            <i>Website</i> ini dikembangkan untuk mendukung pengembangan 
+            peta interaktif untuk melihat keterjangkauan transprtasi publik, fasilitas pendukung, dan potensi pengembangan kawasan \
+            berbasis Transit Oriented Development.   
+        </p>
+        <hr>
+
+        <h2>Kebutuhan Data dan Analisis</h2>
+        <ul class="list">
+            <li>Jumlah sebaran penduduk</li>
+            <li>Sebaran Hub Transportasi Umum</li>
+            <li>Sebaran Fasilitas (Pendidikan, Kesehatan, Perdagangan & Jasa, Perkantoran) </li>
+            <li>Analisis Isodistance 500m dari Hub Transportasi</li>
+        </ul>
+
+        <h2>Kriteria Kawasan dengan Potensi TOD</h2>
+       
+        <table id="table1" border="1">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Kriteria potensi TOD</th>
+                    <th>Jumlah penduduk</th>
+                    <th>Jangkauan Hub Transportasi</th>
+                    <th>Jangkauan Fasilitas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Tinggi</td>
+                    <td>12.000-15.000</td>
+                    <td>3</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sedang</td>
+                    <td>12.000-9.000</td>
+                    <td>2</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Rendah</td>
+                    <td>9.000-6.000</td>
+                    <td>1</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <small>*akan disesuaikan dengan karakter kota amatan</small>
+
+    </section>
+    <hr>
+    <!-- MAP PAGE -->
+    <div class="map-contain">
+        <iframe class="peta"
+        src="https://www.google.com/maps/embed?pb=..." 
+        width="500" 
+        height="300" 
+        style="border:1px solid #ccc;" 
+        allowfullscreen loading="lazy">
+        </iframe>
+    </div>
+    
+
+    <!-- About; pendidikan, latar belakang, informasi kontak -->
+    <section id="Tentang">
+        <h1>Tentang Penulis</h1>
+        <img src="Fotoku.JPG">
+        <div class="biodata">
+            <p><strong>Nadya Fadhilah Febrianti</strong><br>
+                Yogyakarta<br>
+                <em>Mahasiswa S1 Perencanaan Wilayah dan Kota Universitas Gadjah Mada</em>
+            </p>
+        </div>
+        <p class="diriku">
+            Saya adalah mahasiswa semester 7 yang sedang mencari inspirasi untuk tugas akhir.
+            Belakangan saya memiliki ketertarikan pada bidang perencanaan transportasi publik, 
+            dan hal inilah yang mendorong saya mengambil tema TOD untuk final project.
+        </p>
+        
+        <!-- NYOBA TIMELINE -->
+        <p>Riwayat Pendidikan</p>
+        <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+                <span>2023 - Sekarang</span>
+                <p><strong>Universitas Gadjah Mada</strong> </p>
+                <p>S1 Perencanaan Wilayah dan Kota</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content">
+                <span>2020 - 2023</span>
+                <p><strong>MAN Insan Cendekia Ogan Komering Ilir, nilai 92/100</strong></p>
+                <p>IPA</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- STOP -->
+
+        <p><strong>Informasi Kontak</strong>
+            <ul>
+                <li>Phone : <a href="tel:081367773504">081367773504</a></li>
+                <li>Instagram : <a href="https://instagram.com/@ddilae.2">@ddilae.2</a></li>
+            </ul>
+        </p>
+        <p>Mau berteman?<br>
+        Isi Formulir Di bawah ini
+        </p>
+        <form>
+            <!-- untuk masukan teks -->
+            <label>Nama Lengkap:</label>
+            <input type="text"><br>
+            <label>Nama Panggilan:</label>
+            <input type="text"><br>
+
+            <!-- ini untuk input tanggal -->
+            <label>Tempat,Tanggal Lahir:</label>
+            <input type="text">,<input type="date"><br>
+            <label>Umur:</label><input type="number"><br>
+
+            Kontak Anda:<br>
+            <label>Email:</label><input type="email"><br>
+            <label>No. WhatsApp:</label><input type="tel"><br>
+        </form>
+        <button type="button" onclick="alert('Saya Akan Lawan!!')">Yuk Temenan!</button><br>
+    </section>
+    <hr>
+   </main>
+
+   <!-- FOOTER -->
+   <footer>
+    <P>COPYRIGHT 2026 NFF</P>
+   </footer>
+</body>
+</html>
