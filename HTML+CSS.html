@@ -122,6 +122,58 @@
         .timeline-content h3{
             margin:8px 0;
         }
+        .kontak{
+            display: flex;
+            justify-content: center; /* Tengah horizontal */
+            align-items: center;     /* Tengah vertikal */
+            gap: 20px;               /* Jarak antar logo */
+            margin-top: 20px;
+        }
+        .kontak img {
+            width: 40px;   /* Atur ukuran logo */
+            height: 40px;
+            transition: 0.3s;
+        }
+        #formulir_teman{
+            padding:60px 10%;
+            text-align:center;
+        }
+
+        .form_kontak{
+            max-width:600px;
+            margin:auto;
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+
+        .form_kontak input,
+        .form_kontak textarea{
+            padding:15px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            font-size:16px;
+            font-family:inherit;
+        }
+
+        .form_kontak textarea{
+            resize:vertical;
+        }
+
+        .form_kontak button{
+            padding:15px;
+            background:#2E7D32;
+            color:white;
+            border:none;
+            border-radius:10px;
+            font-size:16px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .form_kontak button:hover{
+            background:#1B5E20;
+        }
     </style>
 
 
@@ -229,7 +281,7 @@
         </p>
         
         <!-- NYOBA TIMELINE -->
-        <p>Riwayat Pendidikan</p>
+        <p><strong>Pendidikan</strong></p>
         <div class="timeline">
 
         <div class="timeline-item">
@@ -254,33 +306,34 @@
 
     </div>
     <!-- STOP -->
-
-        <p><strong>Informasi Kontak</strong>
-            <ul>
-                <li>Phone : <a href="tel:081367773504">081367773504</a></li>
-                <li>Instagram : <a href="https://instagram.com/@ddilae.2">@ddilae.2</a></li>
-            </ul>
-        </p>
+    <div class="kontak">
+            <a href="tel:081367773504" target="_blank">
+                 <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFJkR6Y1YkJAy6dnYdCPnr4Q26JYzVyzf_4_pe2h9a3g&s"></img>
+            </a>
+            <a href="https://instagram.com/@ddilae.2" target="_blank">
+                <img width="50" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"></img>
+            </a>
+    </div>
+    <div id="formulir_teman">
         <p>Mau berteman?<br>
         Isi Formulir Di bawah ini
         </p>
-        <form>
+        <form class="form_kontak">
             <!-- untuk masukan teks -->
-            <label>Nama Lengkap:</label>
-            <input type="text"><br>
-            <label>Nama Panggilan:</label>
-            <input type="text"><br>
+            <input type="text" placeholder="Nama Lengkap"><br>
+            <input type="text" placeholder="Nama Panggilan"><br>
 
             <!-- ini untuk input tanggal -->
             <label>Tempat,Tanggal Lahir:</label>
-            <input type="text">,<input type="date"><br>
-            <label>Umur:</label><input type="number"><br>
+            <input type="text"><input type="date"><br>
 
             Kontak Anda:<br>
             <label>Email:</label><input type="email"><br>
             <label>No. WhatsApp:</label><input type="tel"><br>
         </form>
         <button type="button" onclick="alert('Saya Akan Lawan!!')">Yuk Temenan!</button><br>
+    </div>
+        
     </section>
     <hr>
    </main>
